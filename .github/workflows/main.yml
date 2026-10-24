@@ -1,0 +1,18 @@
+name: python-syntax-error-test
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Greetings
+        run: echo Hello From Apun
+
+      - name: Check Syntax Errors
+        run: python -m compileall .
